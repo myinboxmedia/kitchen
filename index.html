@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Kitchen - Panel</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <style>
+
+    body{background-color: #fdf6e6;}
+
+    .avatar-60 {
+        height: 60px;
+        width: 60px;
+        min-width: 60px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 0.25rem;
+    }
+    .avatar-50 {
+        height: 50px;
+        width: 50px;
+        min-width: 50px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        border-radius: 0.25rem;
+    }
+    .orderDate {
+        font-size: 12px;
+    }
+    .waiterN {
+        font-size: 13px;
+        text-align: right;
+    }
+
+.ctc-button .status {
+  display: none;
+  -webkit-transform-origin: left;
+  transform-origin: left;
+}
+.ctc-button.checked {
+  -webkit-animation: move-in-steps 1s ease;
+  animation: move-in-steps 1s ease;
+}
+.ctc-button.checked[data-status="complete"] {
+  opacity: 1;
+}
+.ctc-button.checked[data-status="complete"] .status {
+  display: block;
+  -webkit-animation: animate-btn-text 1s ease;
+  animation: animate-btn-text 1s ease;
+}
+.ctc-button.checked[data-status="reject"] {
+  opacity: 1;
+}
+.ctc-button.checked[data-status="reject"] .status {
+  display: block;
+  -webkit-animation: animate-btn-text 1s ease;
+  animation: animate-btn-text 1s ease;
+}
+@-webkit-keyframes animate-btn-text {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(0%) translateX(-100%);
+    transform: scaleX(0%) translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleX(100%) translateX(0%);
+    transform: scaleX(100%) translateX(0%);
+  }
+}
+@keyframes animate-btn-text {
+  0% {
+    opacity: 0;
+    -webkit-transform: scaleX(0%) translateX(-100%);
+    transform: scaleX(0%) translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scaleX(100%) translateX(0%);
+    transform: scaleX(100%) translateX(0%);
+  }
+}
+@-webkit-keyframes move-in-steps {
+  0% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes move-in-steps {
+  0% {
+    width: 50%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+    </style>
+    <body>
+        <!-- Navigation-->
+        <header class="container d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none fw-bolder">
+                Resturent
+                </a>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Menu</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Order</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark">Order History</a></li>
+                </ul>
+      
+                <div class="col-md-3 text-end">
+                     <button type="button" class="btn btn-danger me-2"><i class="bi bi-box-arrow-in-left"></i> Logout</button>
+                </div>
+          </header>
+
+        <!-- Header-->
+        <header class="bg-light py-4">
+            <div class="container">
+                <div class="text-dark">
+                    <p class="fw-bolder">Order History</p>
+                    <!-- <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p> -->
+                </div>
+                <div class="orderNo">
+                    <button type="button" class="btn btn-outline-success px-4 rounded-pill active" data-bs-toggle="button" autocomplete="off"><i class="bi bi-check2"></i> #345</button>
+                    <button type="button" class="btn btn-outline-danger px-4 rounded-pill" data-bs-toggle="button" autocomplete="off"><i class="bi bi-x"></i> #379</button>
+                    <button type="button" class="btn btn-outline-success px-4 rounded-pill" data-bs-toggle="button" autocomplete="off"><i class="bi bi-check2"></i> #387</button>
+                    <button type="button" class="btn btn-outline-danger px-4 rounded-pill active" data-bs-toggle="button" autocomplete="off"><i class="bi bi-x"></i> #399</button>
+                    <button type="button" class="btn btn-outline-success px-4 rounded-pill active" data-bs-toggle="button" autocomplete="off"><i class="bi bi-check2"></i> #345</button>
+                    <button type="button" class="btn btn-outline-success px-4 rounded-pill active" data-bs-toggle="button" autocomplete="off"><i class="bi bi-check2"></i> #655</button>
+                    <button type="button" class="btn btn-outline-success px-4 rounded-pill active" data-bs-toggle="button" autocomplete="off"><i class="bi bi-check2"></i> #885</button>
+                    <button type="button" class="btn btn-outline-danger px-4 rounded-pill" data-bs-toggle="button" autocomplete="off"><i class="bi bi-x"></i> #899</button>
+                    <button type="button" class="btn btn-outline-success px-4 rounded-pill" data-bs-toggle="button" autocomplete="off"><i class="bi bi-check2"></i> #088</button>
+                    <button type="button" class="btn btn-outline-danger px-4 rounded-pill" data-bs-toggle="button" autocomplete="off"><i class="bi bi-x"></i> #878</button>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container">
+                <!--  -->
+                <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-xxl-4">
+                   
+                    <div class="col">
+                        <div class="card order-history-card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex align-items-top justify-content-between mb-1 pb-2 border-bottom">
+                              <div class="">
+                                <h6 class="heading-title mb-2 orderNo">Order #309</h6>
+                                <p class="mb-0 orderDate">23 Feb 2021, 08:28 PM</p>
+                              </div>
+                              <div class="tableNo">
+                                <p class="badge bg-danger m-0">Table No <span>11</span></p>
+                                <p class="my-0 waiterN">Amandeep</p>
+                              </div>
+                              <!-- <img src="assets/foodimg/02.png" class="img-fluid rounded-pill avatar-50" alt=""> -->
+                            </div>
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Vegetable Mixups</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 1</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Pasta</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 2</small>
+                                </div>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Mexican Burger </h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 5</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <!--  -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="">
+                                <p class="mb-0">x8 items</p>
+                                <h6 class="heading-title fw-bolder">₹1060.60</h6>
+                              </div>
+                              <div class="d-flex align-items-center" id="action-01">
+                                <button class="btn btn-icon btn-outline-success rounded ctc-button d-block checked" data-action="click" data-closest="#action-01" data-status="complete">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.667969 4.09434L3.93567 7.33366L10.668 0.666992" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Completed</span>
+                                  </span>
+                                </button>
+                                <button class="btn btn-icon btn-outline-danger rounded ctc-button ms-3 d-none" data-action="click" data-closest="#action-01" data-status="reject">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6654 5.33496L5.33203 10.6683" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.6643 10.6663L5.33203 5.33301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Rejected</span>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col">
+                        <div class="card order-history-card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex align-items-top justify-content-between mb-1 pb-2 border-bottom">
+                              <div class="">
+                                <h6 class="heading-title mb-2 orderNo">Order #309</h6>
+                                <p class="mb-0 orderDate">23 Feb 2021, 08:28 PM</p>
+                              </div>
+                              <div class="tableNo">
+                                <p class="badge bg-danger m-0">Table No <span>15</span></p>
+                                <p class="my-0 waiterN">Rajiv</p>
+                              </div>
+                              <!-- <img src="assets/foodimg/02.png" class="img-fluid rounded-pill avatar-50" alt=""> -->
+                            </div>
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Vegetable Mixups</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 1</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Pasta</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 2</small>
+                                </div>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Mexican Burger </h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 5</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <!--  -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="">
+                                <p class="mb-0">x8 items</p>
+                                <h6 class="heading-title fw-bolder">₹1060.60</h6>
+                              </div>
+                              <div class="d-flex align-items-center" id="action-01">
+                                <button class="btn btn-icon btn-outline-success rounded ctc-button d-block checked" data-action="click" data-closest="#action-01" data-status="complete">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.667969 4.09434L3.93567 7.33366L10.668 0.666992" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Completed</span>
+                                  </span>
+                                </button>
+                                <button class="btn btn-icon btn-outline-danger rounded ctc-button ms-3 d-none" data-action="click" data-closest="#action-01" data-status="reject">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6654 5.33496L5.33203 10.6683" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.6643 10.6663L5.33203 5.33301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Rejected</span>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col">
+                        <div class="card order-history-card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex align-items-top justify-content-between mb-1 pb-2 border-bottom">
+                              <div class="">
+                                <h6 class="heading-title mb-2 orderNo">Order #309</h6>
+                                <p class="mb-0 orderDate">23 Feb 2021, 08:28 PM</p>
+                              </div>
+                              <div class="tableNo">
+                                <p class="badge bg-danger m-0">Table No <span>13</span></p>
+                                <p class="my-0 waiterN">Ravi</p>
+                              </div>
+                              <!-- <img src="assets/foodimg/02.png" class="img-fluid rounded-pill avatar-50" alt=""> -->
+                            </div>
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Vegetable Mixups</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 1</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Pasta</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 2</small>
+                                </div>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Mexican Burger </h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 5</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <!--  -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="">
+                                <p class="mb-0">x8 items</p>
+                                <h6 class="heading-title fw-bolder">₹1060.60</h6>
+                              </div>
+                              <div class="d-flex align-items-center" id="action-01">
+                                <button class="btn btn-icon btn-outline-success rounded ctc-button d-block checked" data-action="click" data-closest="#action-01" data-status="complete">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.667969 4.09434L3.93567 7.33366L10.668 0.666992" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Completed</span>
+                                  </span>
+                                </button>
+                                <button class="btn btn-icon btn-outline-danger rounded ctc-button ms-3 d-none" data-action="click" data-closest="#action-01" data-status="reject">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6654 5.33496L5.33203 10.6683" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.6643 10.6663L5.33203 5.33301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Rejected</span>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col">
+                        <div class="card order-history-card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex align-items-top justify-content-between mb-1 pb-2 border-bottom">
+                              <div class="">
+                                <h6 class="heading-title mb-2 orderNo">Order #309</h6>
+                                <p class="mb-0 orderDate">23 Feb 2021, 08:28 PM</p>
+                              </div>
+                              <div class="tableNo">
+                                <p class="badge bg-danger m-0">Table No <span>16</span></p>
+                                <p class="my-0 waiterN">Karan</p>
+                              </div>
+                              <!-- <img src="assets/foodimg/02.png" class="img-fluid rounded-pill avatar-50" alt=""> -->
+                            </div>
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Vegetable Mixups</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 1</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Pasta</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 2</small>
+                                </div>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Mexican Burger </h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 5</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <!--  -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="">
+                                <p class="mb-0">x8 items</p>
+                                <h6 class="heading-title fw-bolder">₹1060.60</h6>
+                              </div>
+                              <div class="d-flex align-items-center" id="action-01">
+                                <button class="btn btn-icon btn-outline-success rounded ctc-button d-block checked" data-action="click" data-closest="#action-01" data-status="complete">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.667969 4.09434L3.93567 7.33366L10.668 0.666992" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Completed</span>
+                                  </span>
+                                </button>
+                                <button class="btn btn-icon btn-outline-danger rounded ctc-button ms-3 d-none" data-action="click" data-closest="#action-01" data-status="reject">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6654 5.33496L5.33203 10.6683" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.6643 10.6663L5.33203 5.33301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Rejected</span>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col">
+                        <div class="card order-history-card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex align-items-top justify-content-between mb-1 pb-2 border-bottom">
+                              <div class="">
+                                <h6 class="heading-title mb-2 orderNo">Order #309</h6>
+                                <p class="mb-0 orderDate">23 Feb 2021, 08:28 PM</p>
+                              </div>
+                              <div class="tableNo">
+                                <p class="badge bg-danger m-0">Table No <span>18</span></p>
+                                <p class="my-0 waiterN">Rajiv</p>
+                              </div>
+                              <!-- <img src="assets/foodimg/02.png" class="img-fluid rounded-pill avatar-50" alt=""> -->
+                            </div>
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Vegetable Mixups</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 1</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Pasta</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 2</small>
+                                </div>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Mexican Burger </h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 5</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <!--  -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="">
+                                <p class="mb-0">x8 items</p>
+                                <h6 class="heading-title fw-bolder">₹1060.60</h6>
+                              </div>
+                              <div class="d-flex align-items-center" id="action-01">
+                                <button class="btn btn-icon btn-outline-success rounded ctc-button d-block checked" data-action="click" data-closest="#action-01" data-status="complete">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.667969 4.09434L3.93567 7.33366L10.668 0.666992" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Completed</span>
+                                  </span>
+                                </button>
+                                <button class="btn btn-icon btn-outline-danger rounded ctc-button ms-3 d-none" data-action="click" data-closest="#action-01" data-status="reject">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6654 5.33496L5.33203 10.6683" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.6643 10.6663L5.33203 5.33301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Rejected</span>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col">
+                        <div class="card order-history-card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex align-items-top justify-content-between mb-1 pb-2 border-bottom">
+                              <div class="">
+                                <h6 class="heading-title mb-2 orderNo">Order #309</h6>
+                                <p class="mb-0 orderDate">23 Feb 2021, 08:28 PM</p>
+                              </div>
+                              <div class="tableNo">
+                                <p class="badge bg-danger m-0">Table No <span>19</span></p>
+                                <p class="my-0 waiterN">Karan</p>
+                              </div>
+                              <!-- <img src="assets/foodimg/02.png" class="img-fluid rounded-pill avatar-50" alt=""> -->
+                            </div>
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Vegetable Mixups</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 1</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Pasta</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 2</small>
+                                </div>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Mexican Burger </h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 5</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <!--  -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="">
+                                <p class="mb-0">x8 items</p>
+                                <h6 class="heading-title fw-bolder">₹1060.60</h6>
+                              </div>
+                              <div class="d-flex align-items-center" id="action-01">
+                                <button class="btn btn-icon btn-outline-success rounded ctc-button d-block checked" data-action="click" data-closest="#action-01" data-status="complete">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.667969 4.09434L3.93567 7.33366L10.668 0.666992" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Completed</span>
+                                  </span>
+                                </button>
+                                <button class="btn btn-icon btn-outline-danger rounded ctc-button ms-3 d-none" data-action="click" data-closest="#action-01" data-status="reject">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6654 5.33496L5.33203 10.6683" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.6643 10.6663L5.33203 5.33301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Rejected</span>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col">
+                        <div class="card order-history-card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex align-items-top justify-content-between mb-1 pb-2 border-bottom">
+                              <div class="">
+                                <h6 class="heading-title mb-2 orderNo">Order #309</h6>
+                                <p class="mb-0 orderDate">23 Feb 2021, 08:28 PM</p>
+                              </div>
+                              <div class="tableNo">
+                                <p class="badge bg-danger m-0">Table No <span>20</span></p>
+                                <p class="my-0 waiterN">Amandeep</p>
+                              </div>
+                              <!-- <img src="assets/foodimg/02.png" class="img-fluid rounded-pill avatar-50" alt=""> -->
+                            </div>
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Vegetable Mixups</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 1</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Pasta</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 2</small>
+                                </div>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Mexican Burger </h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 5</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <!--  -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="">
+                                <p class="mb-0">x8 items</p>
+                                <h6 class="heading-title fw-bolder">₹1060.60</h6>
+                              </div>
+                              <div class="d-flex align-items-center" id="action-01">
+                                <button class="btn btn-icon btn-outline-success rounded ctc-button d-block checked" data-action="click" data-closest="#action-01" data-status="complete">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.667969 4.09434L3.93567 7.33366L10.668 0.666992" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Completed</span>
+                                  </span>
+                                </button>
+                                <button class="btn btn-icon btn-outline-danger rounded ctc-button ms-3 d-none" data-action="click" data-closest="#action-01" data-status="reject">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6654 5.33496L5.33203 10.6683" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.6643 10.6663L5.33203 5.33301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Rejected</span>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col">
+                        <div class="card order-history-card mb-3">
+                          <div class="card-body">
+                            <div class="d-flex align-items-top justify-content-between mb-1 pb-2 border-bottom">
+                              <div class="">
+                                <h6 class="heading-title mb-2 orderNo">Order #309</h6>
+                                <p class="mb-0 orderDate">23 Feb 2021, 08:28 PM</p>
+                              </div>
+                              <div class="tableNo">
+                                <p class="badge bg-danger m-0">Table No <span>21</span></p>
+                                <p class="my-0 waiterN">Rajiv</p>
+                              </div>
+                              <!-- <img src="assets/foodimg/02.png" class="img-fluid rounded-pill avatar-50" alt=""> -->
+                            </div>
+                            <div class="list-group list-group-flush">
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Vegetable Mixups</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 1</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Pasta</h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 2</small>
+                                </div>
+                              </a>
+                              <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-2 px-0" aria-current="true">
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                  <div>
+                                    <h6 class="mb-1">Mexican Burger </h6>
+                                    <!-- <p class="mb-2 opacity-75">Vegetable Fritters with Egg</p> -->
+                                  </div>
+                                  <small class="text-nowrap fw-bold">Qty : 5</small>
+                                </div>
+                              </a>
+                              <!--  -->
+                              <!--  -->
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <div class="">
+                                <p class="mb-0">x8 items</p>
+                                <h6 class="heading-title fw-bolder">₹1060.60</h6>
+                              </div>
+                              <div class="d-flex align-items-center" id="action-01">
+                                <button class="btn btn-icon btn-outline-success rounded ctc-button d-block checked" data-action="click" data-closest="#action-01" data-status="complete">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.667969 4.09434L3.93567 7.33366L10.668 0.666992" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Completed</span>
+                                  </span>
+                                </button>
+                                <button class="btn btn-icon btn-outline-danger rounded ctc-button ms-3 d-none" data-action="click" data-closest="#action-01" data-status="reject">
+                                  <span class="btn-inner d-flex align-items-center">
+                                    <span>
+                                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.6654 5.33496L5.33203 10.6683" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M10.6643 10.6663L5.33203 5.33301" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                    </span>
+                                    <span class="status pe-2">Rejected</span>
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+                <!--  -->
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-3 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; MIM 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
